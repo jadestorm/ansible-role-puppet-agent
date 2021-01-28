@@ -31,13 +31,3 @@
       shell: "hdiutil detach ./tmp/{{ puppet_agent_package_official }}/ && rm -R ./tmp/"
 
   when: not puppet_package.stat.exists
-
-- name: Darwin | Check if puppet service is running
-  shell: launchctl list | grep puppet
-  register: puppet_service
-  changed_when: false
-  ignore_errors: yes
-
-- name: Darwin | Puppet-agent service on osx
-  command: launchctl load -w /Library/LaunchDaemons/com.puppetlabs.puppet.plist
-  when: puppet_service.rc != 0

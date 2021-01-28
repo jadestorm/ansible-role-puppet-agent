@@ -11,9 +11,3 @@
     path: /etc/rc.conf
     block: |
       puppet_enable="YES"
-
-- name: FreeBSD | Puppet-agent service
-  service:
-    name: "{{ puppet_agent_service }}"
-    state: started
-    enabled: yes
