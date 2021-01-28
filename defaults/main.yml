@@ -33,6 +33,10 @@ puppet_agent_install: true
 # Default is true
 puppet_agent_configuration: true
 
+# Manage the puppet agent service
+# Default is true
+puppet_agent_service_manage: true
+
 # The master server to request configurations from.
 # Defaults to puppet
 puppet_agent_server: puppet
