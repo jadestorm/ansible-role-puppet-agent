@@ -1,0 +1,8 @@
+---
+# Start puppet-agent on Windows
+
+- name: Windows | Puppet-agent service
+  win_service:
+    name: puppet
+    start_mode: auto
+    state: started

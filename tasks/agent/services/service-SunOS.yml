@@ -1,0 +1,8 @@
+---
+# Start puppet-agent on Solaris
+
+- name: Solaris | Puppet-agent service
+  service:
+    name: "{{ puppet_agent_service }}"
+    state: started
+    enabled: yes

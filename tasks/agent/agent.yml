@@ -8,3 +8,7 @@
 - name: Puppet-agent configuration
   include_tasks: "configuration.yml"
   when: puppet_agent_configuration
+
+- name: Puppet-agent service
+  include_tasks: "services/service-{{ ansible_system }}.yml"
+  when: puppet_agent_service_manage
